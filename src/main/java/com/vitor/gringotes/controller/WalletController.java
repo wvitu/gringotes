@@ -3,6 +3,7 @@ package com.vitor.gringotes.controller;
 import com.vitor.gringotes.dto.CreateWalletDto;
 import com.vitor.gringotes.entity.Wallet;
 import com.vitor.gringotes.service.WalletService;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,7 +19,7 @@ public class WalletController {
     }
 
     @PostMapping("/wallets")
-    public ResponseEntity<Wallet> createWallet(@RequestBody CreateWalletDto dto) {
+    public ResponseEntity<Wallet> createWallet(@RequestBody @Valid CreateWalletDto dto) {
 
         var wallet = walletService.createWallet(dto);
 
