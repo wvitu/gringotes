@@ -1,6 +1,6 @@
 package com.vitor.gringotes.service;
 
-import com.vitor.gringotes.dto.CreateWalletDto;
+import com.vitor.gringotes.controller.dto.CreateWalletDto;
 import com.vitor.gringotes.entity.Wallet;
 import com.vitor.gringotes.exception.DataExistingException;
 import com.vitor.gringotes.repository.WalletRepository;

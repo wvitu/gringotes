@@ -1,6 +1,6 @@
 package com.vitor.gringotes.controller;
 
-import com.vitor.gringotes.dto.CreateWalletDto;
+import com.vitor.gringotes.controller.dto.CreateWalletDto;
 import com.vitor.gringotes.entity.Wallet;
 import com.vitor.gringotes.service.WalletService;
 import jakarta.validation.Valid;

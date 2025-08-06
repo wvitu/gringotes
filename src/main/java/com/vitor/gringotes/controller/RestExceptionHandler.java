@@ -1,4 +1,4 @@
-package com.vitor.gringotes.dto;
+package com.vitor.gringotes.controller;
 
 import com.vitor.gringotes.exception.GringotesException;
 import org.springframework.http.HttpStatus;

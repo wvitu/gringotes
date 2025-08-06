@@ -1,4 +1,4 @@
-package com.vitor.gringotes.dto;
+package com.vitor.gringotes.controller.dto;
 
 import com.vitor.gringotes.entity.Wallet;
 import com.vitor.gringotes.entity.WalletType;
