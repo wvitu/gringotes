@@ -47,11 +47,13 @@ public class TransferService {
         sender.debit(transferDto.value());
         receiver.credit(transferDto.value());
 
-        var transfer = new transfer(sender, receiver, transferDto.value());
+        var transfer = new Transfer(sender, receiver, transferDto.value());
 
         walletRepository.save(sender);
         walletRepository.save(receiver);
         var transferResult = transferRepository.save(transfer);
+
+
 
         CompletableFuture.runAsync(() -> notificationService.sendNotification(transferResult));
 
@@ -60,7 +62,7 @@ public class TransferService {
 
     private void validateTransfer(TransferDto transferDto, Wallet sender) {
 
-        if(sender.isTransferAllowedForWalletType()) {
+        if(!sender.isTransferAllowedForWalletType()) {
             throw new TransferNotAllowedForWalletTypeException();
         }
 
@@ -68,7 +70,7 @@ public class TransferService {
             throw new InsufficientBalanceException();
         }
 
-        if (!authorizationService.isAuthorized(TransferDto)) {
+        if (!authorizationService.isAuthorized(transferDto)) {
             throw new TransferNotAuthorizedException();
         }
     }
